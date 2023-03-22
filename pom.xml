@@ -12,7 +12,7 @@
 	<artifactId>azmoon-line</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>azmoon-line</name>
-	<description>A web app for</description>
+	<description>A web application for online tests</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
