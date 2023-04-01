@@ -14,12 +14,12 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity
-@Table(name = AbstractQuestion.TABLE_NAME)
+@Table(name = AbstractQuestionEntity.TABLE_NAME)
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class AbstractQuestion extends BaseEntity<Long> {
+public abstract class AbstractQuestionEntity extends BaseEntity<Long> {
     static final String TABLE_NAME = "question_table";
 
     @OneToOne(mappedBy = "question", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    private AbstractAnswer answer;
+    private AbstractAnswerEntity answer;
 }

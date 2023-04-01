@@ -14,8 +14,8 @@ import lombok.*;
 @Builder
 
 @Entity
-@Table(name = Operation.TABLE_NAME)
-public class Operation extends BaseEntity<Integer> {
+@Table(name = OperationEntity.TABLE_NAME)
+public class OperationEntity extends BaseEntity<Integer> {
     static final String TABLE_NAME = "operation_table";
     private static final String NAME = "name";
 

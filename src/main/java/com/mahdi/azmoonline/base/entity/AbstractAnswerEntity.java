@@ -13,9 +13,9 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity
-@Table(name = AbstractAnswer.TABLE_NAME)
+@Table(name = AbstractAnswerEntity.TABLE_NAME)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class AbstractAnswer extends BaseEntity<Long> {
+public abstract class AbstractAnswerEntity extends BaseEntity<Long> {
     static final String TABLE_NAME = "answer_table";
 
     @Id
@@ -25,5 +25,5 @@ public abstract class AbstractAnswer extends BaseEntity<Long> {
     @OneToOne
     @MapsId
     @JoinColumn(name = "id")
-    private AbstractQuestion question;
+    private AbstractQuestionEntity question;
 }

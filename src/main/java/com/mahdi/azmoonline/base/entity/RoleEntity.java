@@ -17,8 +17,8 @@ import java.util.Set;
 @Builder
 
 @Entity
-@Table(name = Role.TABLE_NAME)
-public class Role extends BaseEntity<Integer> {
+@Table(name = RoleEntity.TABLE_NAME)
+public class RoleEntity extends BaseEntity<Integer> {
     static final String TABLE_NAME = "role_table";
     private static final String NAME = "name";
 
@@ -27,6 +27,6 @@ public class Role extends BaseEntity<Integer> {
 
     @ManyToMany
     @Builder.Default
-    private Set<Operation> operations = new HashSet<>();
+    private Set<OperationEntity> operations = new HashSet<>();
 
 }

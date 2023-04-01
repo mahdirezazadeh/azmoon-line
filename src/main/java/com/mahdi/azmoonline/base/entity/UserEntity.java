@@ -19,9 +19,9 @@ import java.util.Set;
 @AllArgsConstructor
 
 @Entity
-@Table(name = User.TABLE_NAME)
+@Table(name = UserEntity.TABLE_NAME)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class User extends BaseEntity<Long> {
+public abstract class UserEntity extends BaseEntity<Long> {
     static final String TABLE_NAME = "user_table";
     private static final String GENDER = "gender";
     private static final String USERNAME = "username";
@@ -63,10 +63,10 @@ public abstract class User extends BaseEntity<Long> {
     private boolean isConfirmed = false;
 
     @Embedded
-    private ContactInformation contactInformation;
+    private ContactInformationEmbeddedEntity contactInformation;
 
     @ManyToMany
-    private Set<Role> roles = new HashSet<>();
+    private Set<RoleEntity> roles = new HashSet<>();
 
     public String getFullName() {
         return firstName.concat(" ").concat(lastName);

@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ContactInformation {
+public class ContactInformationEmbeddedEntity {
     private static final String EMAIL = "email";
     private static final String PHONE_NUMBER = "phone_number";
 
