@@ -20,6 +20,5 @@ public abstract class AbstractQuestionEntity extends BaseEntity<Long> {
     static final String TABLE_NAME = "question_table";
 
     @OneToOne(mappedBy = "question", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
     private AbstractAnswerEntity answer;
 }

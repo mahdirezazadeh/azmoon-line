@@ -18,12 +18,7 @@ import lombok.Setter;
 public abstract class AbstractAnswerEntity extends BaseEntity<Long> {
     static final String TABLE_NAME = "answer_table";
 
-    @Id
-    @Column(name = "id")
-    private Long id;
-
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "id")
+    @OneToOne(optional = false)
+    @JoinColumn
     private AbstractQuestionEntity question;
 }
