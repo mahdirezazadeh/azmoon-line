@@ -1,7 +1,4 @@
-package com.mahdi.azmoonline.base.mapper;
-
-import com.mahdi.azmoonline.base.BaseDTO;
-import com.mahdi.azmoonline.base.BaseEntity;
+package com.mahdi.azmoonline.base;
 
 import java.io.Serializable;
 import java.util.List;

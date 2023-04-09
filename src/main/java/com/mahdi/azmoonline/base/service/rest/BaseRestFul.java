@@ -1,9 +1,9 @@
-package com.mahdi.azmoonline.base.web.rest;
+package com.mahdi.azmoonline.base.service.rest;
 
 import com.mahdi.azmoonline.base.BaseDTO;
 import com.mahdi.azmoonline.base.BaseEntity;
-import com.mahdi.azmoonline.base.mapper.BaseMapper;
-import com.mahdi.azmoonline.base.service.BaseService;
+import com.mahdi.azmoonline.base.BaseMapper;
+import com.mahdi.azmoonline.base.manager.BaseManager;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class BaseRestFul<E extends BaseEntity<PK>, D extends BaseDTO<PK>, PK extends Serializable,
-        S extends BaseService<E, PK>, M extends BaseMapper<E, D, PK>> {
+        S extends BaseManager<E, PK>, M extends BaseMapper<E, D, PK>> {
 
     private final S service;
 
