@@ -24,8 +24,8 @@ angular.module("azmoonline.auth")
                         .$promise
                         .then(resolveHandler, rejectHandler);
 
-                    function resolveHandler() {
-                        //move to home page
+                    function resolveHandler(response) {
+                        $scope.token = response.data.token;
                     }
 
                     function rejectHandler(error) {
@@ -38,7 +38,7 @@ angular.module("azmoonline.auth")
         ['$scope', 'AuthService', 'Flash',
             function ($scope, AuthService, Flash) {
                 //functions
-                // $scope.signup = signup;
+                $scope.signup = signup;
 
                 //models
                 $scope.labels = {};
