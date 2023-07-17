@@ -1,0 +1,48 @@
+<div class="container">
+    <flash-message></flash-message>
+    <br>
+    <!--    <div class="panel col-lg-3"></div>-->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2>Login</h2>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="col-md-12">
+                        <label class="control-label" for="username" ng-bind="labels.username"></label>
+                    </div>
+                    <div class="col-md-12">
+                        <input class="form-control" id="username" ng-model="user.username"
+                               placeholder="{{labels.username}}"
+                               type="text">
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <div class="col-md-12">
+                        <label class="control-label" for="password" ng-bind="labels.password"></label>
+                    </div>
+                    <div class="col-md-12">
+                        <input class="form-control" id="password" ng-model="user.password"
+                               placeholder="{{labels.password}}"
+                               type="text">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel-footer">
+            <div class="row">
+                <div class="row" style="margin-right: 10px">
+                    <button class="btn btn-primary pull-right" ng-click="login()" type="button">{{labels.login}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--    <div class="panel col-lg-3"></div>-->
+</div>
+
+<hr>

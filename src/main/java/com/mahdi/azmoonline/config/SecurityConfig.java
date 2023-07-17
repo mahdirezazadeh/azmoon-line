@@ -10,8 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import static com.mahdi.azmoonline.config.security.SecurityConstant.getPermitAllUrls;
-import static com.mahdi.azmoonline.config.security.SecurityConstant.staticFilesUrls;
+import static com.mahdi.azmoonline.config.security.SecurityConstant.anonymousUrls;
 
 @Configuration
 @EnableWebSecurity
@@ -35,9 +34,7 @@ public class SecurityConfig {
 //                .hasAnyRole("ADMIN")
 //                .requestMatchers("/user/**")
 //                .hasAnyRole("USER", "ADMIN")
-                .requestMatchers(getPermitAllUrls())
-                .anonymous()
-                .requestMatchers(staticFilesUrls())
+                .requestMatchers(anonymousUrls())
                 .anonymous()
                 .anyRequest()
                 .authenticated()
