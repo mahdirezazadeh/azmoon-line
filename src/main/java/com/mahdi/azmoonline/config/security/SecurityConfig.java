@@ -1,4 +1,4 @@
-package com.mahdi.azmoonline.config;
+package com.mahdi.azmoonline.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
