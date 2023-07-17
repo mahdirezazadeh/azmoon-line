@@ -1,6 +1,6 @@
 package com.mahdi.azmoonline.entities;
 
-import com.mahdi.azmoonline.base.BaseEntity;
+import com.mahdi.azmoonline.base.entity.UserEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -14,7 +14,7 @@ import lombok.*;
 
 @Entity
 @Table(name = TeacherEntity.TABLE_NAME)
-public class TeacherEntity extends BaseEntity<Long> {
+public class TeacherEntity extends UserEntity {
     static final String TABLE_NAME = "teacher_table";
     private static final String TEACHER_CODE = "teacher_code";
 
