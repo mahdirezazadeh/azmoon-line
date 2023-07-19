@@ -1,1 +1,1 @@
-angular.module('azmoonline', ['azmoonline.user', "azmoonline.auth"]);
+angular.module('azmoonline', ["azmoonline.auth"]);

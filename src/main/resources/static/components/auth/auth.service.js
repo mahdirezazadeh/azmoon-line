@@ -1,11 +1,28 @@
 angular.module("azmoonline.auth")
-    .service("AuthService", ['$resource',
-        function ($resource) {
-            var customActions = {
-                loadLabels: {method: 'GET', url: '/guest/label'},
-                login: {method: 'POST', url: 'api/auth/login'},
-                signup: {method: 'POST', url: 'api/auth/signup'}
+    .service("AuthService", ['$http',
+        function ($http) {
+            var authService = {};
+
+            authService.loadLabels = function () {
+                return $http.get('/guest/label');
             };
 
-            return $resource('', {}, customActions);
+            authService.login = function (credentials) {
+                var loginForm = new FormData();
+                loginForm.append("username", credentials.username);
+                loginForm.append("password", credentials.password);
+
+                console.log(loginForm)
+
+                return $http.post('/login', loginForm, {
+                    transformRequest: angular.identity,
+                    headers: {'Content-Type': undefined}
+                });
+            };
+
+            authService.signup = function (user) {
+                return $http.post('/guest/signup', user);
+            };
+
+            return authService;
         }]);

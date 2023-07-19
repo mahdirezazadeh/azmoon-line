@@ -40,6 +40,26 @@
                 </div>
                 <div class="col-sm-12 col-md-12">
                     <div class="col-md-12">
+                        <label class="control-label" for="email" ng-bind="labels.email"></label>
+                    </div>
+                    <div class="col-md-12">
+                        <input class="form-control" id="email" ng-model="user.email"
+                               placeholder="{{labels.email}}"
+                               type="email">
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <div class="col-md-12">
+                        <label class="control-label" for="phoneNumber" ng-bind="labels.phoneNumber"></label>
+                    </div>
+                    <div class="col-md-12">
+                        <input class="form-control" id="phoneNumber" ng-model="user.phoneNumber"
+                               placeholder="{{labels.phoneNumber}}"
+                               type="number">
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <div class="col-md-12">
                         <label class="control-label" for="password" ng-bind="labels.password"></label>
                     </div>
                     <div class="col-md-12">
