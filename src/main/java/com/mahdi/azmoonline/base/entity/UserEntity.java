@@ -63,7 +63,7 @@ public abstract class UserEntity extends BaseEntity<Long> {
     private boolean isConfirmed = false;
 
     @Embedded
-    private ContactInformationEmbeddedEntity contactInformation;
+    private ContactInformationEmbeddedEntity contactInformation = new ContactInformationEmbeddedEntity();
 
     @ManyToMany
     private Set<RoleEntity> roles = new HashSet<>();

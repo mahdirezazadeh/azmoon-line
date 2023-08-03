@@ -1,4 +1,4 @@
-package com.mahdi.azmoonline.service;
+package com.mahdi.azmoonline.controller;
 
 import com.mahdi.azmoonline.config.i18n.MessagesResourceBundle;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-public class LoadLabels {
+public class LoadLabelsRestController {
+
     @Autowired
     MessagesResourceBundle messagesResourceBundle;
 
-    //
     @GetMapping("/guest/label")
     public Result loadLabels() {
         return new Result(messagesResourceBundle.getMessages());

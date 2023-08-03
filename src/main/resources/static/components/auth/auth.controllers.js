@@ -30,7 +30,7 @@ angular.module("azmoonline.auth")
 
                     function resolveHandler(response) {
                         console.log(response)
-                        $scope.token = response.data.token;
+                        // $scope.token = response.data.token;
                     }
 
                     function rejectHandler(error) {

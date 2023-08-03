@@ -8,20 +8,11 @@ angular.module("azmoonline.auth")
             };
 
             authService.login = function (credentials) {
-                var loginForm = new FormData();
-                loginForm.append("username", credentials.username);
-                loginForm.append("password", credentials.password);
-
-                console.log(loginForm)
-
-                return $http.post('/login', loginForm, {
-                    transformRequest: angular.identity,
-                    headers: {'Content-Type': undefined}
-                });
+                return $http.post('/guest/login', credentials);
             };
 
             authService.signup = function (user) {
-                return $http.post('/guest/signup', user);
+                return $http.post('/guest/register', user);
             };
 
             return authService;
