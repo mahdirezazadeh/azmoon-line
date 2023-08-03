@@ -1,6 +1,7 @@
-package com.mahdi.azmoonline.manager;
+package com.mahdi.azmoonline.service;
 
 public interface LoginService {
+
     Response login(Param param);
 
     record Param(String username, String password) {

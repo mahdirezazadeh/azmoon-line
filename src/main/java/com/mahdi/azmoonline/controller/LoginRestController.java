@@ -1,7 +1,7 @@
 package com.mahdi.azmoonline.controller;
 
 import com.mahdi.azmoonline.controller.dto.LoginRequestDto;
-import com.mahdi.azmoonline.manager.LoginService;
+import com.mahdi.azmoonline.service.LoginService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/guest")
-public class LoginController {
+public class LoginRestController {
 
     private final LoginService loginService;
 
