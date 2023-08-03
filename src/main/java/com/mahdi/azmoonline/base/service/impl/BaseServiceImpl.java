@@ -1,8 +1,8 @@
-package com.mahdi.azmoonline.base.manager.impl;
+package com.mahdi.azmoonline.base.service.impl;
 
 
 import com.mahdi.azmoonline.base.BaseEntity;
-import com.mahdi.azmoonline.base.manager.BaseManager;
+import com.mahdi.azmoonline.base.service.BaseService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,12 +12,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public class BaseManagerImpl<E extends BaseEntity<ID>, ID extends Serializable, R extends JpaRepository<E, ID>>
-        implements BaseManager<E, ID> {
+public class BaseServiceImpl<E extends BaseEntity<ID>, ID extends Serializable, R extends JpaRepository<E, ID>>
+        implements BaseService<E, ID> {
 
     protected final R repository;
 
-    public BaseManagerImpl(R repository) {
+    public BaseServiceImpl(R repository) {
         this.repository = repository;
     }
 

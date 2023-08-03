@@ -49,9 +49,6 @@ public abstract class UserEntity extends BaseEntity<Long> {
     @Column(name = BIRTHDAY)
     private Date birthday;
 
-    @Column(name = NATIONAL_CODE)
-    private String nationalCode;
-
     @Column(name = GENDER)
     @Enumerated(value = EnumType.STRING)
     private Gender gender;

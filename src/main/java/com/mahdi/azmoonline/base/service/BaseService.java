@@ -1,4 +1,4 @@
-package com.mahdi.azmoonline.base.manager;
+package com.mahdi.azmoonline.base.service;
 
 
 import com.mahdi.azmoonline.base.BaseEntity;
@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public interface BaseManager<E extends BaseEntity<ID>, ID extends Serializable> {
+public interface BaseService<E extends BaseEntity<ID>, ID extends Serializable> {
 
     E save(E e);
 
