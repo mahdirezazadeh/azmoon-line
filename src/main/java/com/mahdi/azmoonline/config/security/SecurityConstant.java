@@ -3,12 +3,11 @@ package com.mahdi.azmoonline.config.security;
 public class SecurityConstant {
 
     private SecurityConstant() {
-
     }
 
-    public static String[] getPermitAllUrls() {
+    public static String[] getPermitAllRestApis() {
         return new String[]{
-                "/guest/**"
+                "/guest/**", "/guest/login", "/", "/auth/**"
         };
     }
 
@@ -18,9 +17,9 @@ public class SecurityConstant {
         };
     }
 
-    public static String[] anonymousUrls() {
+    public static String[] getPermitAllUrls() {
         String[] staticFilesUrls = staticFilesUrls();
-        String[] permitAllUrls = getPermitAllUrls();
+        String[] permitAllUrls = getPermitAllRestApis();
 
         int staticFilesUrlsLen = staticFilesUrls.length;
         int permitAllUrlsLen = permitAllUrls.length;

@@ -20,7 +20,13 @@ public class SecurityUser implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+        List<SimpleGrantedAuthority> roleAuthorities = user.getRoles().stream()
+                .map(role -> new SimpleGrantedAuthority(role.getName())).toList();
+        List<SimpleGrantedAuthority> operationAuthorities = user.getRoles().stream()
+                .flatMap(roleEntity -> roleEntity.getOperations().stream())
+                .map(operation -> new SimpleGrantedAuthority(operation.getName())).toList();
+        authorities.addAll(roleAuthorities);
+        authorities.addAll(operationAuthorities);
         return authorities;
     }
 
@@ -36,17 +42,17 @@ public class SecurityUser implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return user.isActive();
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
@@ -60,5 +66,9 @@ public class SecurityUser implements UserDetails {
 
     public void setUser(UserEntity user) {
         this.user = user;
+    }
+
+    public Long getId() {
+        return user.getId();
     }
 }
